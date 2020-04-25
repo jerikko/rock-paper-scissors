@@ -19,36 +19,39 @@
             }
         }
 
-        function oneRound (playerSelection, computerSelection) {
+        function playRound (playerSelection, computerSelection) {
             playerSelection = playerSelection.toLowerCase();
+            if (playerSelection != 'rock' || 'paper' || 'scissors') {
+                return 'Invalid selection.'
+            }
             computerSelection = computerSelection.toLowerCase();
             if (playerSelection == computerSelection) {
                 return "It's a tie!"
             } else {
                 if (computerSelection == 'rock') {
                     if (playerSelection == 'paper') {
-                        return "Congrats! You win the round."
+                        return "Congrats! You win the round. Paper beats rock."
                     } else {
-                        return "Too bad. You lost the round."
+                        return "Too bad. You lost the round. Rock beats scissors."
                     }
                 } else if (computerSelection == 'paper') {
                     if (playerSelection == 'scissors') {
-                        return "Congrats! You win the round."
+                        return "Congrats! You win the round. Scissors beats paper."
                     } else {
-                        return "Too bad. You lost the round."
+                        return "Too bad. You lost the round. Paper beats rock."
                     }
                 } else {
                     if (playerSelection == 'rock') {
-                        return "Congrats! You win the round."
+                        return "Congrats! You win the round. Rock beats scissors."
                     } else {
-                        return "Too bad. You lost the round."
+                        return "Too bad. You lost the round. Scissors beats paper."
                     }
                 }
             }
         }
 
-        let playerSelect = prompt("Rock, paper, or scissors?") // need to add check for correct choice
-
+        let playerSelect = prompt("Rock, paper, or scissors?")
+        console.log(playRound(playerSelect, computerPlay))
     </script>
 </body>
 </html>
