@@ -21,8 +21,9 @@
 
         function playRound (playerSelection, computerSelection) {
             playerSelection = playerSelection.toLowerCase();
-            if (playerSelection != 'rock' && 'paper' && 'scissors') {
-                return 'Invalid selection.'
+            if (playerSelection != 'rock' && playerSelection != 'paper' && playerSelection != 'scissors') {
+            // if (playerSelection.match(/^(?!rock|paper|scissors)$/i)) {       // Regex asserting that it does not match rock, paper, or scissors
+                return 'Invalid selection.'                                     // ?! is a negative look-ahead -- NEEDS DEBUGGING
             }
             if (playerSelection == computerSelection) {
                 return "It's a tie!"
@@ -50,6 +51,7 @@
         }
 
         let playerSelect = prompt("Rock, paper, or scissors?")
+        let computerSelect = computerPlay()
     </script>
 </body>
 </html>
